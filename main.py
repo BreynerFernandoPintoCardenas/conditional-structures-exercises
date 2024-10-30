@@ -1,14 +1,17 @@
-# Solicitar la entrada de cuatro números
-numero1 = int(input("Ingrese número: "))
-numero2 = int(input("Ingrese número: "))
-numero3 = int(input("Ingrese número: "))
-numero4 = int(input("Ingrese número: "))
+# Solicitar la entrada de dos palabras
+palabra1 = input("Palabra 1: ")
+palabra2 = input("Palabra 2: ")
 
-# Crear una lista con los números
-numeros = [numero1, numero2, numero3, numero4]
+# Calcular la longitud de cada palabra
+longitud1 = len(palabra1)
+longitud2 = len(palabra2)
 
-# Ordenar la lista
-numeros.sort()
-
-# Mostrar los números en orden
-print(" ".join(map(str, numeros)))
+# Comparar las longitudes de las palabras
+if longitud1 > longitud2:
+    diferencia = longitud1 - longitud2
+    print(f"La palabra {palabra1} tiene {diferencia} letras más que {palabra2}.")
+elif longitud1 < longitud2:
+    diferencia = longitud2 - longitud1
+    print(f"La palabra {palabra2} tiene {diferencia} letras más que {palabra1}.")
+else:
+    print("Las dos palabras tienen el mismo largo.")
