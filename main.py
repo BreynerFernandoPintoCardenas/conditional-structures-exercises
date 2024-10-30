@@ -1,17 +1,15 @@
-# Solicitar la entrada de dos palabras
-palabra1 = input("Palabra 1: ")
-palabra2 = input("Palabra 2: ")
+# Solicitar la entrada de un carácter
+caracter = input("Ingrese caracter: ")
 
-# Calcular la longitud de cada palabra
-longitud1 = len(palabra1)
-longitud2 = len(palabra2)
-
-# Comparar las longitudes de las palabras
-if longitud1 > longitud2:
-    diferencia = longitud1 - longitud2
-    print(f"La palabra {palabra1} tiene {diferencia} letras más que {palabra2}.")
-elif longitud1 < longitud2:
-    diferencia = longitud2 - longitud1
-    print(f"La palabra {palabra2} tiene {diferencia} letras más que {palabra1}.")
+# Verificar si es un número
+if caracter.isdigit():
+    print("Es número.")
+# Verificar si es una letra
+elif caracter.isalpha():
+    if caracter.isupper():
+        print("Es letra mayúscula.")
+    else:
+        print("Es letra minúscula.")
+# Si no es ni letra ni número
 else:
-    print("Las dos palabras tienen el mismo largo.")
+    print("No es letra ni número.")
