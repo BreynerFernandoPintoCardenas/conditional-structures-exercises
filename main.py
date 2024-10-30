@@ -1,22 +1,26 @@
-# Función para determinar el tipo de triángulo
-def tipo_triangulo(a, b, c):
-    # Verificar si es un triángulo válido
-    if a + b > c and a + c > b and b + c > a:
-        # Determinar el tipo de triángulo
-        if a == b == c:
-            return "El triángulo es equilátero."
-        elif a == b or a == c or b == c:
-            return "El triángulo es isósceles."
+# Función para calcular el IMC y determinar el riesgo
+def condicion_riesgo(estatura, peso, edad):
+    # Calcular el IMC
+    imc = peso / (estatura ** 2)
+
+    # Determinar la condición de riesgo
+    if edad < 45:
+        if imc < 22.0:
+            return "Riesgo bajo"
         else:
-            return "El triángulo es escaleno."
-    else:
-        return "No es un triángulo válido."
+            return "Riesgo medio"
+    else:  # edad >= 45
+        if imc < 22.0:
+            return "Riesgo medio"
+        else:
+            return "Riesgo alto"
 
-# Solicitar los lados del triángulo
-a = float(input("Ingrese a: "))
-b = float(input("Ingrese b: "))
-c = float(input("Ingrese c: "))
+# Solicitar datos al usuario
+estatura = float(input("Ingrese su estatura en metros: "))
+peso = float(input("Ingrese su peso en kilogramos: "))
+edad = int(input("Ingrese su edad: "))
 
-# Llamar a la función y mostrar el resultado
-resultado = tipo_triangulo(a, b, c)
-print(resultado)
+# Obtener y mostrar la condición de riesgo
+riesgo = condicion_riesgo(estatura, peso, edad)
+print(f"Su condición de riesgo es: {riesgo}")
+
