@@ -1,32 +1,22 @@
-# Función para determinar el estado del set
-def estado_set(juegos_a, juegos_b):
-    # Verificar si el resultado es inválido
-    if (juegos_a >= 7 and juegos_b >= 6) or (juegos_b >= 7 and juegos_a >= 6):
-        print("Invalido")
-        return
-
-    # Comprobar si A ha ganado
-    if juegos_a >= 6 and juegos_a - juegos_b >= 2:
-        print("Gano A")
-    # Comprobar si B ha ganado
-    elif juegos_b >= 6 and juegos_b - juegos_a >= 2:
-        print("Gano B")
-    # Si el set está empatado a 5 juegos
-    elif juegos_a == 5 and juegos_b == 5:
-        print("Aun no termina")
-    # Si el set está empatado a 6 juegos
-    elif juegos_a == 6 and juegos_b == 6:
-        print("Aun no termina")
-    # Si el set aún no ha terminado
-    elif juegos_a < 6 and juegos_b < 6:
-        print("Aun no termina")
+# Función para determinar el tipo de triángulo
+def tipo_triangulo(a, b, c):
+    # Verificar si es un triángulo válido
+    if a + b > c and a + c > b and b + c > a:
+        # Determinar el tipo de triángulo
+        if a == b == c:
+            return "El triángulo es equilátero."
+        elif a == b or a == c or b == c:
+            return "El triángulo es isósceles."
+        else:
+            return "El triángulo es escaleno."
     else:
-        print("Invalido")
+        return "No es un triángulo válido."
 
-# Solicitar juegos ganados por A y B
-juegos_a = int(input("Juegos ganados por A: "))
-juegos_b = int(input("Juegos ganados por B: "))
+# Solicitar los lados del triángulo
+a = float(input("Ingrese a: "))
+b = float(input("Ingrese b: "))
+c = float(input("Ingrese c: "))
 
-# Llamar a la función para determinar el estado del set
-estado_set(juegos_a, juegos_b)
-
+# Llamar a la función y mostrar el resultado
+resultado = tipo_triangulo(a, b, c)
+print(resultado)
