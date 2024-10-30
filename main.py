@@ -1,18 +1,19 @@
-# Solicita al usuario que ingrese un año
-año = int(input("Pon tu año y yo te diré si es bisiesto: "))
+numberOne=int(input("Enter one number "))
+numberTwo=int(input("Enter second number "))
 
-# Verifica si el año es divisible por 100
-divisible100 = (año % 100) == 0
+cociente=numberOne//numberTwo
+resto=numberOne%numberTwo
 
-# Comienza a verificar si el año es bisiesto
-if (año % 4) == 0:
-    # Si el año es divisible por 100, se debe verificar si es también divisible por 400
-    if divisible100:
-        if (año % 400) == 0:
-            print(f"{año} es bisiesto")
-        else:
-            print(f"{año} no es bisiesto")
-    else:
-        print(f"{año} es bisiesto")
+if resto==0: 
+    print("la divison es exacta")
+    print(f"""
+    cociente: {cociente}
+    resto: {resto}
+""")
+
 else:
-    print(f"{año} no es bisiesto")
+    print(f"""
+    la division no es exacta.
+    cociente: {cociente}
+    resto: {resto}
+""")
